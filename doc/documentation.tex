@@ -55,13 +55,33 @@ una misma columna de la la matriz.
 \section{Primera Aproximaci\'on}
 
 Como primera soluci\'on se propone aplanar la matriz de entrada para 
-obtener una lista de $2n$ elementos, donde en cada posici\'on hay un animal. 
+obtener una lista de $T$ elementos, siendo $T$ la suma de todos los elementos de la matriz,
+ donde en cada posici\'on hay un animal. 
 Los animales son modelados como una clase \emph{Animal} que tiene dos 
 atributos: \emph{gender}, fila a la que pertenece en la matriz (g\'enero),  
 y \emph{specie}, columna a la que pertenece en la matriz (especie). Luego 
 generar todas las permutaciones de la matriz aplanada y por cada una 
-dividirla mediante \'indices en $\frac{2n}{k}$ porciones, contar cuantas 
-de estas porciones son grupos v\'alidos  
+dividirla mediante \'indices en porciones de tamaño $k$, contar cuantas 
+de estas porciones son grupos v\'alidos y actualizar, de ser necesario, el 
+máximo;   
 
+\subsection{Optimalidad}
+Sea $S = [a_1, a_2, \dots, a_T]$ una distribución de los animales de la 
+matriz aplanada, tal que la cantidad de porciones de tamaño $k$ que se pueden 
+formar a partir de ella, que cumplen las restricciones del problema, sea máxima. 
+Esta distribución $S$ es una permutación de los elementos de la matriz aplanada. 
+El algoritmo propuesto revisa todas las permutaciones de la matriz aplanada y 
+calcula la cantidad de grupos factibles, por tanto, revisa a $S$. Luego 
+el algoritmo encuentra la respuesta óptima.
+
+\subsection{Complejidad Temporal}
+
+Aplanar la matriz tiene costo $O(T)$ donde T es la cantidad 
+de animales. Computar todas las permutaciones de una lista 
+de tamaño T tiene un costo $O(T!)$. La comprobación 
+de cuántos grupos factibles contiene una permutación de T 
+elementos tiene complejidad $O(T)$. Luego el algoritmo 
+tiene complejidad $O(T + T! + T)$ y por el teorema de la 
+suma, la complejidad final es $O(T!)$.
 
 \end{document}
