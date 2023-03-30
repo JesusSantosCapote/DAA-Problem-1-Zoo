@@ -1,0 +1,12 @@
+El Zoologico
+
+En un zoológico un poco especial, a los animales se les separa en dos habitats diferentes de manera general. 
+El habitat para la reproducción, que solo acepta animales de la misma especie, y el habitat para la maduración, 
+que admite animales de distintas especies, pero no de géneros distintos. El zoológico está pasando por una 
+remodelación ya que va a recibir n especies distintas de animales, cada una con un número 'a' de hembras y 'b' 
+de machos, que puede ser distinto entre cada especie. En la remodelación se está pensando en construir salas de 
+exhibición de los animales, cada una se construirá para ser un habitat de reproducción o de maduración, y cada 
+sala podrá soportar un máximo de k animales, igual para todas las salas. Como el zoológico necesita ser rentable 
+y cada sala se cobra por separado, se quiere construir el máximo número posible de salas que cumplan con los 
+requerimientos planteados y que, además, estén llenas de animales, para el disfrute de los visitantes. Cuantas 
+salas deberá construir el zoológico?
