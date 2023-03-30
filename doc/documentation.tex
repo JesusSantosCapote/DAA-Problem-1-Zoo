@@ -27,17 +27,41 @@
 %
 \section{Definici\'on del Problema}
 
-En un zoológico un poco especial, a los animales se les separa en dos 
-habitats diferentes de manera general. 
-El habitat para la reproducción, que solo acepta animales de la misma 
-especie, y el habitat para la maduración, 
-que admite animales de distintas especies, pero no de géneros distintos. El zoológico está pasando por una 
-remodelación ya que va a recibir n especies distintas de animales, cada una con un número 'a' de hembras y 'b' 
-de machos, que puede ser distinto entre cada especie. En la remodelación se está pensando en construir salas de 
-exhibición de los animales, cada una se construirá para ser un habitat de reproducción o de maduración, y cada 
-sala podrá soportar un máximo de k animales, igual para todas las salas. Como el zoológico necesita ser rentable 
-y cada sala se cobra por separado, se quiere construir el máximo número posible de salas que cumplan con los 
-requerimientos planteados y que, además, estén llenas de animales, para el disfrute de los visitantes. Cuantas 
-salas deberá construir el zoológico?
+En un zoológico un poco especial, se separa a los animales en dos 
+hábitats diferentes de manera general. El hábitat para la reproducción 
+solo acepta animales de la misma especie, mientras que el hábitat para 
+la maduración admite animales de distintas especies, pero no de géneros 
+distintos. El zoológico está pasando por una remodelación, ya que va 
+a recibir n especies distintas de animales, cada una con un número 'a' 
+de hembras y 'b' de machos, que puede ser distinto entre cada especie. 
+En la remodelación se está pensando en construir salas de exhibición de 
+los animales. Cada una se construirá para ser un hábitat de reproducción
+ o de maduración, y cada sala podrá soportar un máximo de k animales, 
+ lo cual es igual para todas las salas. Como el zoológico necesita ser 
+ rentable y cada sala se cobra por separado, se quiere construir el 
+ máximo número posible de salas que cumplan con los requerimientos 
+ planteados y que, además, estén llenas de animales para el disfrute 
+ de los visitantes. ¿Cuántas salas deberá construir el zoológico?
+
+\section{Modelaci\'on del Problema}
+
+Se tiene una matriz de dimensi\'on $2*n$, donde cada casilla contiene n\'umeros 
+enteros. El problema consiste en hallar la cantidad m\'axima de grupos de 
+tama\~{n}o $k$ que se pueden formar, donde cada elemento de un grupo es 
+una unidad perteneciente a una casilla de la matriz. Adem\'as, todos los 
+elementos de un grupo deben pertenecer a casillas de una misma fila o de 
+una misma columna de la la matriz.
+
+\section{Primera Aproximaci\'on}
+
+Como primera soluci\'on se propone aplanar la matriz de entrada para 
+obtener una lista de $2n$ elementos, donde en cada posici\'on hay un animal. 
+Los animales son modelados como una clase \emph{Animal} que tiene dos 
+atributos: \emph{gender}, fila a la que pertenece en la matriz (g\'enero),  
+y \emph{specie}, columna a la que pertenece en la matriz (especie). Luego 
+generar todas las permutaciones de la matriz aplanada y por cada una 
+dividirla mediante \'indices en $\frac{2n}{k}$ porciones, contar cuantas 
+de estas porciones son grupos v\'alidos  
+
 
 \end{document}
