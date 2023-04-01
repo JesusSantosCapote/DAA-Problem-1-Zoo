@@ -55,17 +55,77 @@ una misma columna de la la matriz.
 \section{Primera Aproximaci\'on}
 
 Como primera soluci\'on se propone aplanar la matriz de entrada para 
-obtener una lista de $2n$ elementos, donde en cada posici\'on hay un animal. 
+obtener una lista de $T$ elementos, siendo $T$ la suma de todos los elementos de la matriz,
+ donde en cada posici\'on hay un animal. 
 Los animales son modelados como una clase \emph{Animal} que tiene dos 
 atributos: \emph{gender}, fila a la que pertenece en la matriz (g\'enero),  
 y \emph{specie}, columna a la que pertenece en la matriz (especie). Luego 
 generar todas las permutaciones de la matriz aplanada y por cada una 
-dividirla mediante \'indices en $\frac{2n}{k}$ porciones, contar cuantas 
-de estas porciones son grupos v\'alidos.
+dividirla mediante \'indices en porciones de tamaño $k$, contar cuantas 
+de estas porciones son grupos v\'alidos y actualizar, de ser necesario, el 
+máximo;   
 
-\section{Segunda Aproximaci\'on}
+\subsection{Optimalidad}
+Sea $S = [a_1, a_2, \dots, a_T]$ una distribución de los animales de la 
+matriz aplanada, tal que la cantidad de porciones de tamaño $k$ que se pueden 
+formar a partir de ella, que cumplen las restricciones del problema, sea máxima. 
+Esta distribución $S$ es una permutación de los elementos de la matriz aplanada. 
+El algoritmo propuesto revisa todas las permutaciones de la matriz aplanada y 
+calcula la cantidad de grupos factibles, por tanto, revisa a $S$. Luego 
+el algoritmo encuentra la respuesta óptima.
 
-Demostremos que 
+\subsection{Complejidad Temporal}
 
+Aplanar la matriz tiene costo $O(T)$ donde T es la cantidad 
+de animales. Computar todas las permutaciones de una lista 
+de tamaño T tiene un costo $O(T!)$. La comprobación 
+de cuántos grupos factibles contiene una permutación de T 
+elementos tiene complejidad $O(T)$ y esta comprobación se realiza para cada permutación.
+Luego por el teorema de la multiplicación contar cuantos grupos factibles tiene cada permutación 
+tiene complejidad $O(T*T!)$. Luego el algoritmo 
+tiene complejidad $O(T + T*T! + T)$ y por el teorema de la 
+suma, la complejidad final es $O(T*T!)$.
 
+\section{Solución Greedy}
+
+Sea $M = \sum_{i=0}^{n}matriz[0, i]$, $F = \sum_{i=0}^{n}matriz[1, i]$ y 
+$T = M + F$.
+
+La cantidad máxima de grupos que se pueden formar es $\lfloor \frac{T}{k} \rfloor$.
+Para toda posible entrada de datos del problema, la solución es mayor o igual que 
+$\lfloor \frac{T}{k} \rfloor - 1$. Demostremos esto: 
+
+%
+
+Cumpliendo con las restricciones del problema, siempre es posible formar 
+$\lfloor \frac{M}{k}\rfloor=p_1  + \lfloor \frac{F}{k}\rfloor=p_2 $ grupos factibles, 
+donde cada unidad de los grupos pertenece a una misma fila, quedando $r_1$ y 
+$r_2$ elementos residuales en cada fila respectivamente. Luego:
+
+$$M = p_1 * k + r_1, \hspace{0,2 cm} r_1 < k$$
+$$F = p_2 * k + r_2, \hspace{0,2 cm} r_2 < k$$
+$$T = M + F = p_1 * k + p_2*k + r_1 + r_2$$
+
+Como $r_1, r_2 < k$, entonces $r_1 + r_2 < 2k$. Luego, si $r_1 + r_2 < k$, tomando 
+$r_3 = r_1 + r_2$, se cumple que:
+$$T = (p_1 + p_2)k + r_3, \hspace{0,2 cm} r_3 < k$$
+Luego $\lfloor \frac{T}{k}\rfloor = p_1 + p_2 = \lfloor \frac{M}{k}\rfloor  + \lfloor \frac{F}{k}\rfloor$
+
+\vspace{0,2 cm}
+
+Si $r_1 + r_2$ no es menor que $k$ entonces $r_1 + r_2 \geq k$, entonces $r_1 + r_2 = r_3 + k$
+con $r_3 < k$. Luego se cumple que:
+
+$$T = (p_1 + p_2)k + k + r_3 = (p_1 + p_2 + 1)k + r_3$$
+Luego $\lfloor \frac{T}{k}\rfloor = p_1 + p_2 + 1$ entonces $\lfloor \frac{T}{k}\rfloor -1 = p_1 + p_2 = \lfloor \frac{M}{k}\rfloor  + \lfloor \frac{F}{k}\rfloor$
+
+\vspace{0,2 cm}
+
+Para el caso en que $r_1 + r_2 < k$, como $\lfloor \frac{T}{k}\rfloor = p_1 + p_2$ esta solución es factible 
+y óptima.
+
+Para el caso en que $r_1 + r_2 \geq k$, como $p_1 + p_2 = \lfloor \frac{T}{k}\rfloor -1$, 
+esta solución es factible pero no garantizamos que sea óptima. 
+
+Si existe 
 \end{document}
