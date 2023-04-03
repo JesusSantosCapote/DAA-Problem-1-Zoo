@@ -216,7 +216,63 @@ una misma columna por cada columna en $S$, dejando de hacer $m-1$ grupos
 de elementos pertenecientes a una misma fila? ($\lfloor\frac{T}{k}\rfloor = p_1 + p_2 + m - (m-1)$)
 
 Anteriormente se demostr\'o que existe un \'optimo que solo usa un grupo columna a lo sumo 
-por columna
- 
+por columna. Si existiese una solución $S$ de este subproblema se debe cumplir que:
 
+TODO: Especificar la composici'on del conjunto S de columnas son las columnas con lo que se utiliza de cada una de ellas para hacer el grupo en dicha columna
+
+Siendo:
+$$M' = M - \sum S[0,i]$$
+$$F' = F - \sum S[1, i]$$
+
+Entonces $M' \% k + F' \% k < k$ pues: 
+$$T = |S| * k + \lfloor\frac{M'}{k}\rfloor*k + M'\%k + \lfloor\frac{F'}{k}\rfloor*k + F' \% k$$
+
+$$T = (|S| + \lfloor\frac{M'}{k}\rfloor + \lfloor\frac{F'}{k}\rfloor)*k + M'\%k + F'\%k$$
+
+Por lo que por el algoritmo de la división: $|S| + \lfloor\frac{M'}{k}\rfloor + \lfloor\frac{F'}{k}\rfloor = \lfloor\frac{T}{k}\rfloor$
+
+$$T = \lfloor\frac{T}{k}\rfloor*k + T \% k$$
+
+Nótese que si $M' \% k + F' \% k < k$, entonces, además, $M' \% k + F' \% k = T \% k$
+
+Por tanto, si existe una solución $S$, $M' \% k + F' \% k = T \% k$.
+
+Demostremos que $M' \% k + F' \% k = T \% k \Leftrightarrow M' \% k \leq T \% k$:
+
+$\Rightarrow$
+
+Supongamos con el fin de llegar a un absurdo que $M' \% k > T\%k$,
+entonces $M'\%k + F'\%k > T\%k$, contradicci\'on, pues 
+$M' \% k + F' \% k = T \% k$. Luego $M' \% k \leq T \% k$
+
+$\Leftarrow$
+
+$$T = (|S| + \lfloor\frac{M'}{k}\rfloor + \lfloor\frac{F'}{k}\rfloor)*k + F'\%k + M'\% k$$
+
+$$T\%k = ((|S| + \lfloor\frac{M'}{k}\rfloor + \lfloor\frac{F'}{k}\rfloor)*k + F'\%k + M'\% k)\%k$$
+
+$$T\%k = (|S| + \lfloor\frac{M'}{k}\rfloor + \lfloor\frac{F'}{k}\rfloor)*k\%k + (F'\%k + M'\% k)\%k$$
+$$T\%k = 0 + (F'\%k + M'\% k)\%k$$
+$$T\%k = (F'\%k + M'\% k)\%k$$
+
+Luego $T$ y $(F'\%k + M'\% k)$ son congruentes m\'odulo $k$.
+
+Si $M' \% k \leq T \% k$ entonces $F' \%k = T\%k - M'\%k + x*k$.
+Como $F' \% k < k$, entonces $x = 0$ y $F' \% k = T\%k - M'\%k$. Luego 
+$M' \%k + F' \% k  = T \% k$
+
+Por tanto si existiese una solución $S$ se debe cumplir que 
+
+$$(M - \sum S[0, i])\% k \leq T\%k$$
+
+$$M \%k - T\%k \leq (\sum S[0,i])\%k$$ 
+y además como $(M - \sum S[0,i]) \geq 0$
+
+$$M\%k \geq \sum S[0, i] \%k$$
+
+entonces se cumple que: 
+
+$$M\%k - T\% k \leq (\sum S[0,i])\%k \leq M \% k$$
+
+Luego la solución del 
 \end{document}

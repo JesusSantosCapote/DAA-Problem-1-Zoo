@@ -100,46 +100,47 @@ def solution2(k, males, females):
     return total_groups
 
 
-# males = [0, 0, 0]
-# females = [0, 4, 0]
+def solution3(k, males: list, females):
+    A = 0
+    B = 0
+    for i in males:
+        A = A + i
+    for i in females:
+        B = B + i
+    T = A + B
+    Ra = A%k
+    Rb = B%k
+    if Ra + Rb<k:
+        return T//k
+    use_of_column_i_in_A = []
+    for i in range(len((males))):
+        if males[i] + females[i] >= k and females[i]>0 and males[i]>0:
+            temp_list =[]
+                
+            for i in range(max(k-females[i],1),min(males[i]+1,k)):
+                temp_list.append(i)
+            # if (max(k-females[i],0)== min(males[i]+1,k-1))
+            use_of_column_i_in_A.append(temp_list)
+    
+    if len(use_of_column_i_in_A) == 0:
+        return T//k - 1 
 
-# males1 = [1, 1, 1]
-# females1 = [4, 3, 0]
+    dp = [[0 for i in range(k-1)] for i in range(len(use_of_column_i_in_A))]
+    for i in use_of_column_i_in_A[0]:
+        dp[0][i-1] = 1
 
-# males2 = [0, 0, 0]  
-# females2 = [4, 3, 1]
+    for i in range (1,len(dp)):
+        for j in use_of_column_i_in_A[i]:
+            dp[i][j-1] = 1
+            for w in range(len(dp[i-1])):
+                if dp[i-1][w]:
+                    dp[i][w] = 1
+                    temp_rest = (w + 1 + j)%k
+                    dp[i][temp_rest-1] = 1
+    needed_ti_sum_module_k = range(((A%k)-(T%k)+k)%k,A%k+1)
 
-# males3 = [0, 0, 0]
-# females3 = [3, 3, 4]
-
-# males4 = [1, 1, 4]
-# females4 = [1, 1, 2]
-
-# males5 = [1, 1, 1]
-# females5 = [4, 3, 0]
-
-# males6 = [5, 0, 0]
-# females6 = [4, 1, 0]
-
-# males7 = [1, 1, 1]
-# females7 = [3, 3, 1]
-
-# k = 2
-
-# print(solution1(k, males2, females2))
-
-# print(solution1(k, males1, females1) == solution2(k, males1, females1))
-
-# print(solution1(k, males2, females2) == solution2(k, males2, females2))
-
-# print(solution1(k, males3, females3) == solution2(k, males3, females3))
-
-# print(solution1(k, males4, females4) == solution2(k, males4, females4))
-
-# print(solution1(k, males5, females5) == solution2(k, males5, females5))
-
-# print(solution1(k, males6, females6) == solution2(k, males6, females6))
-
-# print(solution1(k, males7, females7) == solution2(k, males7, females7))
-
+    for i in needed_ti_sum_module_k:
+        if dp[len(dp)-1][i-1]:
+            return T//k
+    return T//k - 1
     

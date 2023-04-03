@@ -37,7 +37,35 @@ def generator2(test_cases_number):
     test_cases = []
 
     for i in range(test_cases_number):
-        n = random.randint(1, 15)
+        n = random.randint(1, 7)
+        males = []
+        females = []
+        total = 0
+
+        for i in range(n):
+            mi = 0    
+            fi = 0
+
+            while mi + fi == 0:
+                mi = random.randint(0, 20)
+                fi = random.randint(0, 20)
+            
+            total += mi + fi
+            males.append(mi)
+            females.append(fi)
+
+        k = random.randint(1, 10)
+        
+        test_cases.append((k, males, females))
+
+    return test_cases
+    
+
+def generator3(test_cases_number):
+    test_cases = []
+
+    for i in range(test_cases_number):
+        n = random.randint(1, 50)
         males = []
         females = []
         total = 0
@@ -59,4 +87,3 @@ def generator2(test_cases_number):
         test_cases.append((k, males, females))
 
     return test_cases
-    
