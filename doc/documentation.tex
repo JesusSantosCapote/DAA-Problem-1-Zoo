@@ -127,10 +127,12 @@ Esto significa que, por el algoritmo de divisi\'on, la cantidad de grupos que
 se pueden formar en la columna $i$, $\lfloor\frac{c}{k}\rfloor$, es igual a la suma 
 de $p_a$ (cantidad de grupos que se pueden formar solo con los elementos de $a_i$) mas 
 $p_b$ (cantidad de grupos que se pueden formar solo con los elementos de $b_i$) mas uno. 
-Es decir, para este caso, con formar solo grupo filas con los elementos de $a_i$ y $b_i$
-obtengo la cantidad m\'axima de grupos menos uno. Ese grupo de menos ser\'a un grupo columna
+Es decir, la cantdad de grupos $p_c$ que se pueden formar en una columna es igual a la cantidad $p_a + p_b + 1$ 
+a lo sumo, con formar solo grupo filas con los elementos de $a_i$ y $b_i$
+obtengo la cantidad m\'axima de grupos menos uno.
 
-Por lo dicho anteriormente 
+Por lo dicho anteriormente existe un \'optimo que tiene a lo sumo un grupo con elementos pertenecientes a una misma columna $i$
+para cada $i$.
 
 \subsection{Explicaci\'on del Algoritmo}
 
@@ -146,12 +148,12 @@ al n\'umero máximo de grupos que se pueden crear cumpliendo las restricciones d
 
 
 
-\section{Solución Greedy}
+\section{Tercera Aproximaci\'on}
 
 Sea $M = \sum_{i=0}^{n}matriz[0, i]$, $F = \sum_{i=0}^{n}matriz[1, i]$ y 
 $T = M + F$.
 
-La cantidad máxima de grupos que se pueden formar es $\lfloor \frac{T}{k} \rfloor$.
+Sabemos que la cantidad máxima de grupos que se pueden formar es $\lfloor \frac{T}{k} \rfloor$.
 Para toda posible entrada de datos del problema, la solución es mayor o igual que 
 $\lfloor \frac{T}{k} \rfloor - 1$. Demostremos esto: 
 
@@ -185,7 +187,36 @@ Para el caso en que $r_1 + r_2 < k$, como $\lfloor \frac{T}{k}\rfloor = p_1 + p_
 y óptima.
 
 Para el caso en que $r_1 + r_2 \geq k$, $p_1 + p_2 = \lfloor \frac{T}{k}\rfloor -1$ es 
-la soluci\'on \'optima si no es posible crear grupos columna.
+la soluci\'on \'optima si no es posible crear grupos con elementos pertenecientes a una misma columna.
+
+En otro caso, en el que existe $i$ tal que $a_i + b_i \geq k$, $p_1 + p_2$
+no se garantiza, de momento, que sea una solución \'optima. Se podr\'ia 
+buscar $i$ tal que $min(a_i, r_1) + min(b_i, r_2) \geq k$, para este caso 
+bastar\'ia con asignar el resto de cada fila a $a_i$ y $b_i$ respectivamente
+con ello se formar\'ia un grupo m\'as con elementos pertenecientes a una misma columna, 
+sin disminuir la cantidad $p_1 + p_2$ de grupos que se pueden formar, logrando 
+crear $p_1 + p_2 + 1$ grupos que es un resultado \'optimo.
+
+Pero de no existir dicho $i$ no se garantiza a\'un que $p_1 + p_2$ sea 
+un resultado \'optimo, cabe la posibilidad de que dejando de crear 
+$m$ grupos con elementos pertenecientes a una misma fila se pudiesen 
+formar $m+1$ grupos con elementos pertenecientes a una misma columna.
+N\'otese que para las columnas $i$ tal que $a_i + b_i < k$ los elementos 
+de $a_i$ y $b_i$ solo pueden ser utilizados para formar grupos de elementos
+pertenecientes a una misma fila.
+
+Esto se puede ver como el siguiente subproblema:
+
+Se tiene una submatriz de la matriz $A$ de entrada donde solo est\'an 
+las columnas $i$ pertenecientes a $A$ tal que $A[0, i] + A[1, i] \geq k$.
+Sea $r_1 = M - p_1*k$ y $r_2 = F - p_2*k$, tal que $r_1, r_2 < k$ y 
+$r_1 + r_2 \geq k$ ($p_1 + p_2 = \lfloor\frac{T}{k}\rfloor - 1$). ¿Es posible encontrar un conjunto de columnas $S$ de 
+tamaño $m$ tal que pueda formar un grupo con elementos pertenecientes a 
+una misma columna por cada columna en $S$, dejando de hacer $m-1$ grupos 
+de elementos pertenecientes a una misma fila? ($\lfloor\frac{T}{k}\rfloor = p_1 + p_2 + m - (m-1)$)
+
+Anteriormente se demostr\'o que existe un \'optimo que solo usa un grupo columna a lo sumo 
+por columna
  
 
 \end{document}
