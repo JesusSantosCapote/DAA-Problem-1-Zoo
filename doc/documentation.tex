@@ -275,4 +275,60 @@ entonces se cumple que:
 $$M\%k - T\% k \leq (\sum S[0,i])\%k \leq M \% k$$
 
 Luego la solución del 
+
+\section{Generadores de Casos Prueba}
+
+Se implementaron tres generadores de casos prueba. Su funcionamiento 
+consiste en generar unos $n,k$ aleatoriamente, para luego generar 
+los dos arrays de entrada. Sea $a_i$ y $b_i$ los elementos de los dos arrays
+de entrada en la posici\'on $i$ respectivamente. Para generar ambos arrays, 
+se generan de forma aleatoria $a_i$ y $b_i$ para cada $i$, tal que 
+$a_i + b_i > 0$.
+Lo que diferencia a los tres generadores son los rangos de generaci\'on para 
+cada variable que se genere aleatoriamente.
+
+\subsection{generator1}
+Este generador est\'a pensado para las pruebas que se realicen con el algoritmo 
+propuesto en la primera aproximaci\'on. Debido a la alta complejidad de 
+este primer algoritmo, los casos que crea generator1, son relativamente peque\~{n}os.
+
+\subsection{generator2}
+Este generador est\'a pensado para las pruebas que se realicen con los algoritmos 
+propuestos en la segunda y tercera aproximaci\'on. Genera casos m\'as grandes 
+que el primer generador.
+
+\subsection{generator3}
+Este generador est\'a pensado para las pruebas que se realicen con el 
+algoritmo de la tercera aproximaci\'on. Los casos que este generador 
+crea son bastante grandes, tanto que provar los algoritmos de las primeras 
+aproximaciones es impracticable.
+
+\section{Tester}
+
+El tester es una aplicaci\'on de consola interactiva. Donde el usuario 
+debe escoger dos algoritmos para comparar sus resultados, un generador 
+de casos prueba y una cantidad de casos prueba. Para cada caso prueba 
+el tester compara la soluci\'on de los dos algoritmos seleccionados. 
+En caso de que coincidan imprime un mensaje en color verde, en caso 
+de que no coincidan imprime un mensaje en rojo.
+
+Se aconseja realizar las pruebas de los algoritmos con generator1 debido 
+a la rapidez con que los algoritmos propuestos resuelven los casos.
+
+Se pueden comparar los resultados de los algoritmos de la segunda y 
+tercera aproximaci\'on con generator2, aunque la prueba ser\'a m\'as 
+lenta debido a la alta complejidad temporal de la segunda aproximaci\'on.
+
+El generador generator3 est\'a dise\~{n}ado para probar la rapidez del 
+algoritmo de la tercera aproximaci\'on, no para la comparaci\'on con los 
+restantes algoritmos.
+
+\subsection{Instrucciones}
+
+Abrir una consola en la carpeta donde se encuentra el archivo tester.py. 
+Ejecutar el comando python tester.py.
+
+Si se quisiera no comparar dos algoritmos, sino probar la rapidez contra un 
+generador determinado, seleccione el algoritmo dos veces.
+
 \end{document}
