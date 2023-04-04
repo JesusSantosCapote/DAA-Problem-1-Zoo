@@ -145,7 +145,15 @@ que se crearon. El retorno del algoritmo sera el mayor n\'umero computado de est
 al n\'umero máximo de grupos que se pueden crear cumpliendo las restricciones del problema.
 
 \subsection{Complejidad Temporal}
+Computar todas las formas de seleccioanar columnas es $O(2^n)$, siendo $n$ la cantidad de columnas. 
+Sea $C$ la cantidad de formas computadas. Todas las formas de crear grupos columna por cada columna son 
+computadas utilizando un backtrack, cuya expresi\'on de $T(n)$ es la siguiente:
 
+$$T(n-1) = T(n-1) + O(k)$$
+
+Por el m\'etodo del \'arbol, el backtrack tiene complejidad $O(nk)$. Luego por cada forma de seleccionar columnas se 
+ejecuta el backtrack, que por el teorema de la multiplicación este computo tiene complejdad $O(Cnk)$. Luego el algoritmo 
+tiene complejidad temporal $O(2^n + Cnk)$ 
 
 
 \section{Tercera Aproximaci\'on}
