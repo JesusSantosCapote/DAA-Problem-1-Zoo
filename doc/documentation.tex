@@ -218,9 +218,8 @@ Esto se puede ver como el siguiente subproblema:
 Se tiene una submatriz de la matriz $A$ de entrada donde solo est\'an 
 las columnas $i$ pertenecientes a $A$ tal que $A[0, i] + A[1, i] \geq k$.
 Sea $r_1 = M - p_1*k$ y $r_2 = F - p_2*k$, tal que $r_1, r_2 < k$ y 
-$r_1 + r_2 \geq k$ ($p_1 + p_2 = \lfloor\frac{T}{k}\rfloor - 1$). ¿Es posible encontrar un conjunto de columnas $S$ de 
-tamaño $m$ tal que pueda formar un grupo con elementos pertenecientes a 
-una misma columna por cada columna en $S$, dejando de hacer $m-1$ grupos 
+$r_1 + r_2 \geq k$ ($p_1 + p_2 = \lfloor\frac{T}{k}\rfloor - 1$). ¿Es posible encontrar un conjunto $S$ de tamaño $m$ de valores $a_i, b_i$, con $a_i<A[0,i]$ y $b_i<A[1,i]$ tal que pueda formar un grupo con elementos pertenecientes a 
+una misma columna por cada columna en $S$ usando $a_i$ elementos pertenecientes a $A[0,i]$ y $b_i$ elementos pertenecientes a $A[1,i]$, dejando de hacer $m-1$ grupos 
 de elementos pertenecientes a una misma fila? ($\lfloor\frac{T}{k}\rfloor = p_1 + p_2 + m - (m-1)$)
 
 Anteriormente se demostr\'o que existe un \'optimo que solo usa un grupo columna a lo sumo 
