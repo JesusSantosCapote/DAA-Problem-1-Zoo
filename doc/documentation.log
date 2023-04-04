@@ -1,17 +1,17 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.3.31)  3 APR 2023 14:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2022.4.5)  3 APR 2023 20:25
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/Universidad/4to/DAA/Problema 1/DAA-Problem-1-Zoo/doc/documentation.tex"
-(d:/Universidad/4to/DAA/Problema 1/DAA-Problem-1-Zoo/doc/documentation.tex
+**d:/Shool/4th/DAA/DAA-Problem-1-Zoo/doc/documentation.tex
+(d:/Shool/4th/DAA/DAA-Problem-1-Zoo/doc/documentation.tex
 LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-02-24> (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/llncs\llncs.cls
+L3 programming layer <2022-02-24> (C:\Program Files\MiKTeX\tex/latex/llncs\llncs.cls
 Document Class: llncs 2022/09/05 v2.22 
  LaTeX document class for Lecture Notes in Computer Science
-(C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+(C:\Program Files\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+(C:\Program Files\MiKTeX\tex/latex/base\size10.clo
 File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
@@ -25,7 +25,7 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/tools\multicol.sty
+) (C:\Program Files\MiKTeX\tex/latex/tools\multicol.sty
 Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \c@tracingmulticols=\count193
 \mult@box=\box50
@@ -93,7 +93,7 @@ Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \mult@nat@firstbox=\box93
 \colbreak@box=\box94
 \mc@col@check@num=\count268
-) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/oberdiek\aliascnt.sty
+) (C:\Program Files\MiKTeX\tex/latex/oberdiek\aliascnt.sty
 Package: aliascnt 2018/09/07 v1.5 Alias counters (HO)
 )
 \c@chapter=\count269
@@ -147,25 +147,25 @@ LaTeX Info: Redefining \vec on input line 377.
 \c@solution=\count287
 \c@remark=\count288
 \headlineindent=\dimen160
-) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+) (C:\Program Files\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks20
 \inpenc@posthook=\toks21
-) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+) (C:\Program Files\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2022/02/26 3.73 The Babel package
 \babel@savecnt=\count289
 \U@D=\dimen161
 \l@unhyphenated=\language79
- (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+ (C:\Program Files\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count290
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+(C:\Program Files\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf
+) (C:\Users\kuko\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
 \es@quottoks=\toks22
 \es@quotdepth=\count291
@@ -173,25 +173,25 @@ Package babel Info: Making " an active character on input line 570.
 Package babel Info: Making . an active character on input line 675.
 Package babel Info: Making < an active character on input line 722.
 Package babel Info: Making > an active character on input line 722.
-)) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+)) (C:\Program Files\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+ (C:\Program Files\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks23
-) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+) (C:\Program Files\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+ (C:\Program Files\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+) (C:\Program Files\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
- (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (C:\Program Files\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen162
 \Gin@req@width=\dimen163
-) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count292
 \l__pdf_internal_box=\box97
@@ -222,7 +222,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Info: Redefining \. on input line 14.
 LaTeX Info: Redefining \% on input line 14.
- (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+ (C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count293
 \scratchdimen=\dimen164
@@ -235,10 +235,10 @@ LaTeX Info: Redefining \% on input line 14.
 \MPnumerator=\count297
 \makeMPintoPDFobject=\count298
 \everyMPtoPDFconversion=\toks25
-) (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\Chuchi\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+ (C:\Program Files\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -247,22 +247,27 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 26.
  [1
 
-{C:/Users/Chuchi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5] [6] (documentation.aux
+{C:/Users/kuko/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] [3] [4] [5]
+Overfull \hbox (11.14201pt too wide) in paragraph at lines 287--289
+[]\OT1/cmr/m/n/10 Sea $\OML/cmm/m/it/10 z[]$ \OT1/cmr/m/n/10 el array que re-pre-sen-ta los po-si-bles va-lo-res que pue-de to-mar $([] \OML/cmm/m/it/10 S\OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; i\OT1/cmr/m/n/10 ]) %[]\OML/cmm/m/it/10 k$
+ []
+
+[6] [7] (documentation.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
 ) ) 
 Here is how much of TeX's memory you used:
  3113 strings out of 478582
- 50797 string characters out of 2843872
+ 49610 string characters out of 2854163
  374810 words of memory out of 3000000
  21310 multiletter control sequences out of 15000+600000
  471422 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,6n,62p,288b,363s stack positions out of 10000i,1000n,20000p,200000b,80000s
-<C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Chuchi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on documentation.pdf (6 pages, 164622 bytes).
+ 55i,6n,62p,318b,363s stack positions out of 10000i,1000n,20000p,200000b,80000s
+<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on documentation.pdf (7 pages, 170722 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
+ 86 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

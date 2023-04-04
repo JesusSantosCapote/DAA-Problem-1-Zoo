@@ -218,7 +218,7 @@ de elementos pertenecientes a una misma fila? ($\lfloor\frac{T}{k}\rfloor = p_1 
 Anteriormente se demostr\'o que existe un \'optimo que solo usa un grupo columna a lo sumo 
 por columna. Si existiese una solución $S$ de este subproblema se debe cumplir que:
 
-TODO: Especificar la composici'on del conjunto S de columnas son las columnas con lo que se utiliza de cada una de ellas para hacer el grupo en dicha columna
+%TODO: Especificar la composici'on del conjunto S de columnas son las columnas con lo que se utiliza de cada una de ellas para hacer el grupo en dicha columna
 
 Siendo:
 $$M' = M - \sum S[0,i]$$
@@ -261,7 +261,7 @@ Si $M' \% k \leq T \% k$ entonces $F' \%k = T\%k - M'\%k + x*k$.
 Como $F' \% k < k$, entonces $x = 0$ y $F' \% k = T\%k - M'\%k$. Luego 
 $M' \%k + F' \% k  = T \% k$
 
-Por tanto si existiese una solución $S$ se debe cumplir que 
+Por tanto si existiese una solución $S$ se debe cumplir que:
 
 $$(M - \sum S[0, i])\% k \leq T\%k$$
 
@@ -274,5 +274,36 @@ entonces se cumple que:
 
 $$M\%k - T\% k \leq (\sum S[0,i])\%k \leq M \% k$$
 
-Luego la solución del 
+En este punto el problema se ve reducido a determinar si existe $S$ tal que: $$M\%k - T\% k \leq (\sum S[0,i])\%k \leq M \% k$$.
+Por tanto, si se pudiese calcular los valores de $(\sum S[0,i])\%k$ que son posibles dada la matriz, se pudiese saber si es posible armar $\lfloor\frac{T}{k}\rfloor$
+grupos.
+
+\subsection{Uso de Programación Dinámica}
+
+Inicialmente nos interesa saber por cada columna $m_i$ de $M$, los posibles valores que se pueden utilizar de $m_i$ para formar un grupo en su columna. Llamemos a estos valores $m_{i,j}$.
+Como sabemos que los posibles valores que puedo tomar $(\sum S[0,i])\%k$ son a lo sumo $k$ es posible representar estos valores a traves de un array $z$ de tamaño $k$. Donde la posición i-ésima de $z$ tiene
+un 1 si es posible que $(\sum S[0,i])\%k$ tomo el valor $i$ y un 0 si no (en realidad solo nos interesan $k-1$ posibles valores que puede tomar $(\sum S[0,i])\%k$, pues que $(\sum S[0,i])\%k = 0$ nunca es solución, ya que $M\%k > T\%k$).
+
+Sea $z_i$ el array que representa los posibles valores que puede tomar $(\sum S[0,i])\%k$ usando solo las primeras $i$ columnas de la submatriz,
+a partir de $z_i$ es posible calcular $z_{i+1}$ de la siguiente manera:
+
+$\bullet $ Todos los valores que son 1 en $z_i$ también los son en $z_{i+1}$, pues si era posible hacer dicho valor sin considerar la columna $i+1$, simplemente se puede lograr sin usarla.
+
+$\bullet $ Todos los valores $m_{i+1,j}$ son 1 en $z_{i+1}$, puesto que estos son posible lograrse sin utilizar ninguna de las anteriores $i$ columnas.
+
+$\bullet $ Por cada valor $x$ en $1$ en $z_i$, los valores $(x+m_{i+1,j}) \% k$ son $1$ en $z_{i+1}$ para todo $j$.
+
+Para $z_1$ basta con hacer $1$ todos los valores $m_{1,j}$. Calculando los $z_i$ hasta el último de ellos, en este estarán marcados en 1 todos los valores de $(\sum S[0,i])\%k$ que son posibles dada la matriz.
+
+Luego basta comprobar alguno de los posibles valores de $(\sum S[0,i])\%k$ pertenece al intervalo $$M\%k - T\% k \leq (\sum S[0,i])\%k \leq M \% k$$.
+
+\subsection{Complejidad Temporal}
+
+Calcular la cantidad de elementos pertenecientes a cada fila tiene un costo $O(n)$. Calcular los valores $m_{i,j}$ tiene un costo $O(n*k)$, pues para cada columna $n$ es posible que se usen a lo sumo $k$ posibles valores distintos.
+Crear los arrays $z_i$ tiene un costo $O(n*k^2)$, pues por cada columna $z_i$ de las n columnas, es necesario verificar los posibles $k$ valores
+de $(\sum S[0,i])\%k$ que se pudieron generar en $z_{i-1}$ y por cada uno de ellos comprobar que valores se pueden lograr sumando con los $k$
+posibles valores de los $m_{i,j}$. Luego verificar si alguno de los valores posibles de $(\sum S[0,i])\%k$ pertenece al intervalo $[M\%k - T\% k , M \% k]$ tiene un costo $O(k)$.
+Luego el algoritmo 
+tiene complejidad $O(n + n*k + n*k^2 + k)$ y por el teorema de la 
+suma, la complejidad final es $O(n*k^2)$.
 \end{document}

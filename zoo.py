@@ -119,7 +119,6 @@ def solution3(k, males: list, females):
                 
             for i in range(max(k-females[i],1),min(males[i]+1,k)):
                 temp_list.append(i)
-            # if (max(k-females[i],0)== min(males[i]+1,k-1))
             use_of_column_i_in_A.append(temp_list)
     
     if len(use_of_column_i_in_A) == 0:
