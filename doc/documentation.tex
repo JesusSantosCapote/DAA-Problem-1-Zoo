@@ -61,7 +61,7 @@ Los animales son modelados como una clase \emph{Animal} que tiene dos
 atributos: \emph{gender}, fila a la que pertenece en la matriz (g\'enero),  
 y \emph{specie}, columna a la que pertenece en la matriz (especie). Luego 
 generar todas las permutaciones de la matriz aplanada y por cada una 
-dividirla mediante \'indices en porciones de tamaño $k$, contar cuantas 
+dividirla mediante \'indices en porciones de tamaño $k$, contar cu\'antas 
 de estas porciones son grupos v\'alidos y actualizar, de ser necesario, el 
 máximo;   
 
@@ -113,7 +113,7 @@ con $r_a + r_b < 2k$.
 
 Si $r_a + r_b < k$ entonces por el algoritmo de divisi\'on, la cantidad de grupos que 
 se pueden formar en la columna $i$, $\lfloor\frac{c}{k}\rfloor$, es igual a la suma 
-de $p_a$ (cantidad de grupos que se pueden formar solo con los elementos de $a_i$) mas 
+de $p_a$ (cantidad de grupos que se pueden formar solo con los elementos de $a_i$) m\'as 
 $p_b$ (cantidad de grupos que se pueden formar solo con los elementos de $b_i$). Es decir, para este caso,
 con formar solo grupos filas con los elementos de $a_i$ y $b_i$ se iguala la cantidad 
 de grupos columnas que se pueden formar en la columna $i$. 
@@ -125,8 +125,8 @@ $$c = (p_a + p_b + 1)*k + r', \hspace{0,2cm} r' < k$$
 
 Esto significa que, por el algoritmo de divisi\'on, la cantidad de grupos que 
 se pueden formar en la columna $i$, $\lfloor\frac{c}{k}\rfloor$, es igual a la suma 
-de $p_a$ (cantidad de grupos que se pueden formar solo con los elementos de $a_i$) mas 
-$p_b$ (cantidad de grupos que se pueden formar solo con los elementos de $b_i$) mas uno. 
+de $p_a$ (cantidad de grupos que se pueden formar solo con los elementos de $a_i$) m\'as 
+$p_b$ (cantidad de grupos que se pueden formar solo con los elementos de $b_i$) m\'as uno. 
 Es decir, la cantdad de grupos $p_c$ que se pueden formar en una columna es igual a la cantidad $p_a + p_b + 1$ 
 a lo sumo, con formar solo grupo filas con los elementos de $a_i$ y $b_i$
 obtengo la cantidad m\'axima de grupos menos uno.
@@ -149,7 +149,7 @@ Computar todas las formas de seleccioanar columnas es $O(2^n)$, siendo $n$ la ca
 Sea $C$ la cantidad de formas computadas. Todas las formas de crear grupos columna por cada columna son 
 computadas utilizando un backtrack, cuya expresi\'on de $T(n)$ es la siguiente:
 
-$$T(n-1) = T(n-1) + O(k)$$
+$$T(n) = T(n-1) + O(k)$$
 
 Por el m\'etodo del \'arbol, el backtrack tiene complejidad $O(nk)$. Luego por cada forma de seleccionar columnas se 
 ejecuta el backtrack, que por el teorema de la multiplicación este computo tiene complejdad $O(Cnk)$. Luego el algoritmo 
@@ -324,7 +324,7 @@ de entrada en la posici\'on $i$ respectivamente. Para generar ambos arrays,
 se generan de forma aleatoria $a_i$ y $b_i$ para cada $i$, tal que 
 $a_i + b_i > 0$.
 Lo que diferencia a los tres generadores son los rangos de generaci\'on para 
-cada variable que se genere aleatoriamente.
+cada variable que se genera aleatoriamente.
 
 \subsection{generator1}
 Este generador est\'a pensado para las pruebas que se realicen con el algoritmo 
